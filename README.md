@@ -27,7 +27,7 @@ In the image below, a simple comparison between a model composed of `[1,8,8,8,1]
 ## Usage
 Training, evaluating and plotting the results of the network is super simple. The entire network was written with efficiency and readability in mind and it's less than 150 lines of actual code, leveraging a custom matrix framework written from scratch. You can create a network, generating a dataset and evaluating the predictions in less than 10 lines of code!
 
-```
+```cpp
 #include "net.h"
 
 int main() {
