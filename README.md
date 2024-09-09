@@ -1,5 +1,5 @@
 ## CUDA-MLP
-This project demonstrates a Multilayer Perceptron (MLP) implementation using C++ and CUDA, designed for academic purposes. By leveraging the parallel computing capabilities of CUDA, this MLP efficiently trains and evaluates using forward and backward propagation algorithms. A CPU only version is also provided.
+This project demonstrates a Multilayer Perceptron (MLP) implementation using C++ and CUDA, designed for academic purposes. By leveraging the parallel computing capabilities of CUDA, this MLP efficiently trains and evaluates using forward and backward propagation algorithms. A CPU only version is also provided in the soruce code.
 
 ## Project Scope
 The main goal of this project is to provide a simple yet effective implementation of an <b>MLP from scratch</b> (including a <b>matrix framework</b> and a custom <b>library to load and save data</b>) to model and fit various trigonometric function. The dataset consists of a simple generated linear space of points, which is used for both training and testing the network.
