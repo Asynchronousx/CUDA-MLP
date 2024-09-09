@@ -117,6 +117,18 @@ Without extensions. This will generate a main file already linked that it's ran 
 ### Requirement to compile
 The only thing required to compile, it's obviously a functioning CUDA installation. You should have ```$CUDA_HOME/``` in your environment.
 
+### CPU Compile
+Alternatively, if you are not interested in using CUDA, you can simply use the CPU source code. In this case, you have just to use the standard compiler as follow:
+```
+g++ <main_file.cpp> -o <name>
+```
+For example, when compiling the main: 
+```
+g++ main.cpp -o main
+```
+And that's it!
+
+
 ## Additional information 
 If you want to know more about why and how something works in the code, you can refer to the code itself to know more. It's <b>detailed and extensively commented</b> to an extent where the actual explanation doubles the lines of real code!
 
@@ -124,4 +136,3 @@ If you want to know more about why and how something works in the code, you can 
 The model was built using the following specs:
 - Quadro K5000
 - Cuda 11.0
-
