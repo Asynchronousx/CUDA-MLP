@@ -11,8 +11,8 @@ The function is fitted nicely using almost every configuration of layers both wi
 time needed for the model. The configuration used is composed by the following dense layer: `[1,512,1]`
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="images/fit.png" width="350"/>
-  <img src="images/train_time.png" width="350"/>
+  <img src="images/fit.png" width="380"/>
+  <img src="images/train_time.png" width="380"/>
 </div>
 
 
