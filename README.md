@@ -5,7 +5,7 @@ This project demonstrates a Multilayer Perceptron (MLP) implementation using C++
 The main goal of this project is to provide a simple yet effective implementation of an <b>MLP from scratch</b> (including a <b>matrix framework</b> and a custom <b>library to load and save data</b>) to model and fit various trigonometric function. The dataset consists of a simple generated linear space of points, which is used for both training and testing the network.
 
 ## Performance 
-he models using CUDA demonstrate significant advantages in computation times as the number of layers in the network increases, due to the heavy algebraic operations required.
+The models using CUDA demonstrate significant advantages in computation times as the number of layers in the network increases, due to the heavy algebraic operations required.
 The function used to measure the network's performance is `sin^⁡2`, and it is effectively fitted with nearly every configuration of layers, both with the CUDA-accelerated version and the standard CPU implementation. Below are some graphs illustrating the model's performance and the computation time. The network configuration used consists of the following dense layers: `[1, 512, 1]`.
 
 <div style="display: flex; justify-content: space-between;">
