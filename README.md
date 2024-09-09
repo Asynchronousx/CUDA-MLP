@@ -32,7 +32,6 @@ Training, evaluating and plotting the results of the network is super simple. Th
 
 int main() {
 
-// INIT PHASE //
 // Init a vector containing the layers of the MLP
 std::vector<size_t> layers = {1, 8, 8, 8, 1};
 
@@ -45,18 +44,15 @@ mlp.cuda();
 // init a data obj
 Data<float> data;
 
-// DATAGEN PHASE //
 // Generate a linspace of n points between a and b 
 Matrix<float> X = data.linspace(0, 1, 100);
 
 // Generate a target matrix using the sin^2(x) toy function
 Matrix<float> Y = data.generate(X, "sin^2");
 
-// TRAINING PHASE //
 // Train the mlp using the generated data
 mlp.train(X, Y);
 
-// SAMPLE GENERATION AND PREDICT //
 // Generate n random sample to predict 
 Matrix<float> sample = data.sample(5);
 
@@ -66,3 +62,21 @@ Matrix<float> target = data.generate(sample, "sin^2");
 // Predict the output of the sample
 Matrix<float> prediction = mlp.predict(sample);
 ```
+
+And then you can simply print the prediction as follows: 
+
+```cpp
+std::cout << "Input: " << std::endl;
+sample.print();
+
+// Print the prediction
+std::cout << "Prediction: " << std::endl;
+prediction.print();
+
+// Print the actual target
+std::cout << "Actual: " << std::endl;
+target.print();
+
+}
+```
+
