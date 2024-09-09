@@ -14,7 +14,7 @@ The function used to measure the network's performance is `sin^⁡2`, and it is 
 </div>
 
 ## Comparison
-How does the CUDA/CPU models compare? Simply put, using CUDA does make sense when operating with huge layers and thus huge algebric operation of various sorts. 
+How does the CUDA/CPU models compare? Simply put, using CUDA does make sense when operating with <b>huge layers</b> and thus huge algebric operation of various sorts. 
 That because using CUDA comes with a cost, namely that of CUDA operations (such as CUDA Malloc, CUDA Memcpy, CUDA Launch and so on) performed on data. 
 It does have sense then using such technology within the scope of large matrices and operations (such as images), otherwise the CPU it's just better for simple problems (and faster). 
 In the image below, a simple comparison between a model composed of `[1,8,8,8,1]` neuron layers and a `[1,512,512,512,1]` one.
@@ -25,7 +25,7 @@ In the image below, a simple comparison between a model composed of `[1,8,8,8,1]
 </div>
 
 ## Usage
-Training, evaluating and plotting the results of the network is super simple. The entire network was written with efficiency and readability in mind and it's less than 150 lines of actual code, leveraging a custom matrix framework written from scratch. You can create a network, generating a dataset and evaluating the predictions in less than 10 lines of code!
+Training, evaluating and plotting the results of the network is super simple. The entire network (the net.h file) was written with efficiency and readability in mind and it's <b>less than 150 lines of actual code</b>, leveraging a custom matrix framework written from scratch. You can create a network, generating a dataset and evaluating the predictions in less than 10 lines of code in the main!
 
 ```cpp
 #include "net.h"
