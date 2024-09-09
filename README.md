@@ -61,9 +61,11 @@ Matrix<float> target = data.generate(sample, "sin^2");
 
 // Predict the output of the sample
 Matrix<float> prediction = mlp.predict(sample);
+
+}
 ```
 
-And then you can simply print the prediction as follows: 
+And then, if you want to print the results, you can just add those lines at the end of the code: 
 
 ```cpp
 std::cout << "Input: " << std::endl;
@@ -76,7 +78,18 @@ prediction.print();
 // Print the actual target
 std::cout << "Actual: " << std::endl;
 target.print();
-
-}
 ```
+That's it!
 
+## Compile
+To compile this file, you just have to use the ```compile``` or (```compile_profiler``` if you need to dump the CUDA profiling log file) script in the source directory. The script directly uses CUDA to compile the main and link it to the .cu file. It just needs the file name as follow: 
+```bash
+./compile <main file>  <cuda file>
+```
+Or, simply put: 
+```bash
+./compile main cuda
+```
+Without extensions.
+### Dump information and plot
+Obviously you can also display some graphs as the ones shown above in the performance/comparison tab. 
