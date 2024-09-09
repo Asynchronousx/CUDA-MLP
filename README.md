@@ -132,7 +132,11 @@ And that's it!
 ## Additional information 
 If you want to know more about why and how something works in the code, you can refer to the code itself to know more. It's <b>detailed and extensively commented</b> to an extent where the actual explanation doubles the lines of real code!
 
-## Specifications
-The model was built using the following specs:
+## Requirements
+- an <b>NVIDIA </b> GPU
+- <b> C++11</b>and forward
+- <b> CUDA </b>
+
+Specifically, the model was built using the following specs:
 - Quadro K5000
 - Cuda 11.0
