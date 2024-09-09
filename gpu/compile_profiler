@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Check if the user has provided the entry point (main) and the CUDA file name 
+if [ $# -ne 2 ]; then
+    echo "Usage: ./compile.sh <main file> <cuda file>"
+    exit 1
+fi
+
+# Extract the main file name without the extension
+main_file=$(basename $1 .cpp)
+
+# Compile the .cu file 
+nvcc -std=c++11 -c -o $2.o $2.cu
+
+# Compile the .cpp file with the CUDA library with cuda home env var and the include directory
+g++ -std=c++11 -c -o $main_file.o $1.cpp -I$CUDA_HOME/include
+
+# Link all the object files and the CUDA library
+g++ -o $main_file $main_file.o $2.o -L$CUDA_HOME/lib64 -lcudart
+
+# Remove .o files
+rm $main_file.o $2.o
+
+# Run nvprof to profile the program and generate a log file
+nvprof --log-file ${main_file}_profile_log_full.txt ./$main_file
+
+# Notify the user of the log file location
+echo "Profiling complete. Log file: ${main_file}_profile_log_full.txt"
