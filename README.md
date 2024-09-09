@@ -128,6 +128,8 @@ g++ main.cpp -o main
 ```
 And that's it!
 
+## CUDA Strategy
+The strategy to parallelize is deeply discussed in the source code. Briefly explained, the Quadro K5000 do not offer much computational power and in terms of thread per block, we used a 32x32 configuration (NVIDIA maximum standard), hence 1024 threads per block. The creation of blocks is based on the matrix dimension and it scales the higher the dimension get. Obviously, for a small matrices (i.e: 4x4, 6x6, 8x8) there will be some threads that will not work since they'll not need to compute anything. This may adds some idle computation cost times in smaller models configurations. The entire CUDA code is explained in the ```cuda.cu``` file, which the matrix (and the network library) uses.
 
 ## Additional information 
 If you want to know more about why and how something works in the code, you can refer to the code itself to know more. It's <b>detailed and extensively commented</b> to an extent where the actual explanation doubles the lines of real code!
