@@ -82,7 +82,7 @@ target.print();
 That's it!
 
 ### Dump information and plot
-Obviously you can also display some graphs as the ones shown above in the performance/comparison tab. If you want to produce graphical information you have to run the ```plot_dump.cpp``` file instead of the main. The single difference is that not only it create, train and evaluate the network, but it also uses the <b>data<\b> custom library to load and dump the information on the disk. Specifically, it's almost identical to the previous initialization, but it does adds those lines ad the end of the file (instead of the prints): 
+Obviously you can also display some graphs as the ones shown above in the performance/comparison tab. If you want to produce graphical information you have to compile and run the ```plot_dump.cpp``` file instead of the main. The single difference is that not only it create, train and evaluate the network, but it also uses the <b>data<\b> custom library to load and dump the information on the disk. Specifically, it's almost identical to the previous initialization, but it does adds those lines ad the end of the file (instead of the prints in the previous section): 
 
 ```cpp
 
