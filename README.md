@@ -81,17 +81,6 @@ target.print();
 ```
 That's it!
 
-## Compile
-To compile this file, you just have to use the ```compile``` or (```compile_profiler``` if you need to dump the CUDA profiling log file) script in the source directory. The script directly uses CUDA to compile the main and link it to the .cu file. It just needs the file name as follow: 
-```bash
-./compile <main file>  <cuda file>
-```
-Or, simply put: 
-```bash
-./compile main cuda
-```
-Without extensions. This will generate a main file already linked that it's ran simply using ```./main```.
-
 ### Dump information and plot
 Obviously you can also display some graphs as the ones shown above in the performance/comparison tab. If you want to produce graphical information you have to run the ```plot_dump.cpp``` file instead of the main. The single difference is that not only it create, train and evaluate the network, but it also uses the <b>data<\b> custom library to load and dump the information on the disk. Specifically, it's almost identical to the previous initialization, but it does adds those lines ad the end of the file (instead of the prints): 
 
@@ -107,4 +96,32 @@ data.save(Y.rawdata(), "Y.csv", mlp.ID);
 data.save(untrained_prediction.rawdata(), "untrained_Yhat.csv", mlp.ID);
 data.save(prediction.rawdata(), "trained_Yhat.csv", mlp.ID);
 ```
+It will then generate a folder named after the unique ID of the network (a random number) that you can just plot using the python script inside the folder as follows:
+
+```python
+python plot.py model_ID
+```
+And that's it! Nothing else.
+
+## Compile
+To compile this file, you just have to use the ```compile``` or (```compile_profiler``` if you need to dump the CUDA profiling log file) script in the source directory. The script directly uses CUDA to compile the main and link it to the .cu file. It just needs the file name as follow: 
+```bash
+./compile <main file>  <cuda file>
+```
+Or, simply put: 
+```bash
+./compile main cuda
+```
+Without extensions. This will generate a main file already linked that it's ran simply using ```./main```.
+
+### Requirement to compile
+The only thing required to compile, it's obviously a functioning CUDA installation. You should have ```$CUDA_HOME/``` in your environment.
+
+## Additional information 
+If you want to know more about why and how something works in the code, you can refer to the code itself to know more. It's <b>detailed and extensively commented</b> to an extent where the actual explanation doubles the lines of real code!
+
+## Specifications
+The model was built using the following specs:
+- Quadro K5000
+- Cuda 11.0
 
