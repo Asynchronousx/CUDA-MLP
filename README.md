@@ -90,6 +90,21 @@ Or, simply put:
 ```bash
 ./compile main cuda
 ```
-Without extensions.
+Without extensions. This will generate a main file already linked that it's ran simply using ```./main```.
+
 ### Dump information and plot
-Obviously you can also display some graphs as the ones shown above in the performance/comparison tab. 
+Obviously you can also display some graphs as the ones shown above in the performance/comparison tab. If you want to produce graphical information you have to run the ```plot_dump.cpp``` file instead of the main. The single difference is that not only it create, train and evaluate the network, but it also uses the <b>data<\b> custom library to load and dump the information on the disk. Specifically, it's almost identical to the previous initialization, but it does adds those lines ad the end of the file (instead of the prints): 
+
+```cpp
+
+// We save the model and it's information
+mlp.save();
+
+// We also save X, Y, and the prediction vectors to a csv file using the ID of the mlp object
+// as identifier for the folder name
+data.save(X.rawdata(), "X.csv", mlp.ID);
+data.save(Y.rawdata(), "Y.csv", mlp.ID);
+data.save(untrained_prediction.rawdata(), "untrained_Yhat.csv", mlp.ID);
+data.save(prediction.rawdata(), "trained_Yhat.csv", mlp.ID);
+```
+
