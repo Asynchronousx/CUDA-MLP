@@ -36,7 +36,7 @@ int main() {
 std::vector<size_t> layers = {1, 8, 8, 8, 1};
 
 // Init an mlp object using the layers vector and a fixed lr and iterations
-Net<float> mlp(layers, 0.5, 20000);
+Net<float> mlp(layers, 0.5, 10000);
 
 // Load the net on the gpu
 mlp.cuda();
